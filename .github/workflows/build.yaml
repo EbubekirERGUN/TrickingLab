@@ -18,4 +18,4 @@ jobs:
     - name : List Field in Directory
       run : ls TrickingLibrary.Api/ -R
     - name : Check npm Cli
-      run : npm
+      run : npm -v
