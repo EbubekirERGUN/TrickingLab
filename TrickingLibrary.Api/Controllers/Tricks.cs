@@ -9,9 +9,9 @@ namespace TrickingLibrary.Api.Controllers
     [Route("api/tricks")]
     public class Tricks : ControllerBase
     {
-        private readonly TrickStore _store;
+        private readonly TrickyStore _store;
 
-        public Tricks(TrickStore store)
+        public Tricks(TrickyStore store)
         {
             _store =store;
         }

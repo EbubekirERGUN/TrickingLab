@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace TrickingLibrary.Api.Models
 {
-    public class TrickStore
+    public class TrickyStore
     {
         private readonly List<Trick> _tricks;
-        public TrickStore()
+        public TrickyStore()
         {
             _tricks = new List<Trick>();
         }

@@ -1,4 +1,3 @@
-using System;
 
 namespace TrickingLibrary.Api.Models
 {

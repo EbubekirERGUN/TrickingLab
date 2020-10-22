@@ -13,7 +13,7 @@ namespace TrickingLibrary.Api
         {
             services.AddControllers();
 
-            services.AddSingleton<TrickStore>();
+            services.AddSingleton<TrickyStore>();
 
             services.AddCors(options => options.AddPolicy(Allcors,
             build=> 
