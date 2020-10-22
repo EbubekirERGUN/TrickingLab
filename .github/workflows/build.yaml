@@ -2,13 +2,12 @@ name : Build My Application
 
 on: push
 
-
 jobs:
   build:
     name: Build our App
     runs-on: ubuntu-latest
     steps:
-      name: Print Current Directory
+    - name: Print Current Directory
       run : pwd
-      name: List Field in Directory
+    - name: List Field in Directory
       run: ls
