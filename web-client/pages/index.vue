@@ -1,5 +1,12 @@
 <template>
  <div>
+
+  <v-file-input accept="video/*" @change="handleFile"></v-file-input>
+
+  <form action="">
+    <input name="">
+  </form>
+
   <div v-if="tricks">
       <p v-for="t in tricks">
         {{t.name}}
@@ -21,10 +28,6 @@
 import {mapState,mapActions,mapMutations} from 'vuex';
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
   data:()=>({
     trickName : ""
   }),
@@ -43,10 +46,21 @@ export default {
     ...mapMutations('tricks',{
       resetTricks: 'reset'
     }),
-    ...mapMutations('tricks',['createTrick']),
+    ...mapActions('tricks',['createTrick']),
      async saveTrick(){
        await this.createTrick({trick: {name:this.trickName}});
        this.trickName ="";
+     },
+     async handleFile(file)
+     {
+       if (!file) return;
+
+       const form = new FormData(); 
+
+       form.append();
+
+        const result = await  Axios.post("http://localhost:5000/api/videos");
+        console.log(result);
      }
   }
 }

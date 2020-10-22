@@ -19,7 +19,7 @@ namespace TrickingLibrary.Api.Controllers
         [HttpGet]
         public IActionResult All() => Ok(_store.All);
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get(int id) => Ok(_store.All.FirstOrDefault(x=> x.Id.Equals(id)));
         
         [HttpPost]
