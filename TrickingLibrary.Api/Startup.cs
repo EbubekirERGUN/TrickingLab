@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TrickingLibrary.Api.Models;
 
 namespace TrickingLibrary.Api
 {
@@ -11,6 +12,9 @@ namespace TrickingLibrary.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton<TrickStore>();
+
             services.AddCors(options => options.AddPolicy(Allcors,
             build=> 
             build.AllowAnyHeader()
