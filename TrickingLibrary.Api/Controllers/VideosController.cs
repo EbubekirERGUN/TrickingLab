@@ -16,6 +16,15 @@ namespace TrickingLibrary.Api.Controllers
             _env=env;
         }
 
+        [HttpGet("{video}")]
+        public IActionResult GetVideo(string video)
+        {
+            var mime = video.Split('.').Last();
+            var savePath = Path.Combine(_env.WebRootPath,video);
+            return new FileStreamResult(new FileStream(savePath,FileMode.Open,FileAccess.Read),"video/*");
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> UploadVideo(IFormFile video)
         {
@@ -29,7 +38,7 @@ namespace TrickingLibrary.Api.Controllers
             }
 
 
-            return Ok();
+            return Ok(FileName);
         }
     }
 }
